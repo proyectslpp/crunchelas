@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunchelas - Galletas Artesanales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="fotos/favicon-crunchelas.png">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Crunchelas</div>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Descubre el placer de las galletas artesanales</h1>
+            <p>Horneadas con amor y los mejores ingredientes naturales</p>
+            <button class="btn btn-primary" onclick="scrollToProducts()">Comprar ahora</button>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section class="products" id="productos">
+        <h2 class="section-title">Nuestras Galletas</h2>
+        <div class="product-grid" id="productGrid">
+            <!-- Los productos se cargarán dinámicamente desde JavaScript -->
+        </div>
+    </section>
+
+    <!-- Modal de Producto -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProductModal()">&times;</span>
+            <div id="modalContent">
+                <!-- El contenido del modal se cargará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features" id="nosotros">
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Ingredientes Naturales</h3>
+                <p>Solo utilizamos ingredientes de la más alta calidad</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Envío Rápido</h3>
+                <p>Entrega en 24-48 horas</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💝</div>
+                <h3>Hechas con Amor</h3>
+                <p>Recetas tradicionales con un toque moderno</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@crunchelas.com</p>
+                <p>Teléfono: +34 123 456 789</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">📸</a>
+                    <a href="#">👥</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Métodos de Pago</h3>
+                <p>Aceptamos PayPal y tarjetas de crédito</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <h3>Tu Carrito</h3>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <p>Total: <span id="cartTotal">€0.00</span></p>
+        </div>
+        <div class="cart-buttons">
+            <button class="btn btn-primary" onclick="checkout()">Pagar</button>
+            <button class="btn btn-secondary" onclick="toggleCart()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
